@@ -14,7 +14,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, var(--bg) 0%, #fdfcff 35%, #ffffff 100%);
+  background: radial-gradient(circle at top right, #efeaff 0%, #f8f6ff 35%, #ffffff 100%);
   color: var(--ink);
 }
 
@@ -162,10 +162,9 @@ h1,
 .search-card,
 .dashboard-card {
   background: var(--surface);
-  border: 1px solid #e4defe;
+  border: 1px solid var(--line);
   border-radius: 1.2rem;
   padding: 1.2rem;
-  box-shadow: 0 18px 36px rgba(52, 32, 111, 0.08);
 }
 
 .field-grid {
@@ -192,11 +191,13 @@ select {
   border-radius: 0.7rem;
   padding: 0.7rem;
   font: inherit;
+  background: #fff;
 }
 
-.full {
-  width: 100%;
-  margin-top: 1rem;
+input:focus,
+select:focus {
+  outline: 2px solid #d9ceff;
+  border-color: #c7b6ff;
 }
 
 .muted {
@@ -300,7 +301,7 @@ select {
 .booking-card {
   background: #fff;
   border-radius: 1rem;
-  border: 1px solid #ece7ff;
+  border: 1px solid var(--line);
   padding: 1rem;
 }
 
@@ -413,7 +414,7 @@ select {
 
 footer {
   margin-top: 4rem;
-  border-top: 1px solid #ece7ff;
+  border-top: 1px solid var(--line);
   background: #fbf9ff;
 }
 
