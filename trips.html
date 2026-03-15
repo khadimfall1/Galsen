@@ -5,13 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galsen Parcel — Trips</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-aria-components/dist/react-aria-components.umd.min.js"></script>
   </head>
   <body data-page="trips">
-    <div id="root"></div>
-    <script type="text/babel" src="./script.js"></script>
+    <header class="topbar wrapper">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p class="brand-name">Galsen Parcel</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./trips.html" class="active">Trips</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./support.html">Support</a>
+      </nav>
+      <a class="ghost-btn" href="./dashboard.html">My bookings</a>
+    </header>
+
+    <main class="wrapper page-main">
+      <h1 class="page-title">Book a parcel trip</h1>
+      <div class="search-card">
+        <form id="trip-search-form">
+          <div class="field-grid">
+            <label>Sender name <input id="sender-name" required /></label>
+            <label>Phone number <input id="sender-phone" required /></label>
+            <label>From <input id="from" value="Milan" required /></label>
+            <label>To <input id="to" value="Dakar" required /></label>
+            <label>Pickup date <input id="pickup-date" type="date" value="2026-04-18" required /></label>
+            <label>
+              Package type
+              <select id="package-type">
+                <option value="medium">Medium Box (up to 10kg)</option>
+                <option value="large">Large Box (up to 20kg)</option>
+                <option value="documents">Documents</option>
+              </select>
+            </label>
+            <label class="full-width">Package notes <input id="package-note" /></label>
+          </div>
+          <button class="primary-btn full" type="submit">Search travelers</button>
+        </form>
+        <p class="muted" id="average-price">Average price: <strong>—</strong></p>
+        <p class="feedback" id="feedback-message" aria-live="polite"></p>
+        <div class="results" id="search-results" aria-live="polite"></div>
+      </div>
+
+      <section>
+        <h2 class="section-title">Popular routes</h2>
+        <div class="route-grid" id="route-grid"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>

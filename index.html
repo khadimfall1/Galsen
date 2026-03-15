@@ -3,15 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galsen Parcel — Home</title>
+    <title>Galsen Parcel — Send Packages with Trusted Travelers</title>
+    <script>
+      (function ensureTrailingSlashForStaticHosting() {
+        const { pathname, search, hash } = window.location;
+        const hasFileExtension = /\.[a-z0-9]+$/i.test(pathname);
+        if (!pathname.endsWith('/') && !hasFileExtension) {
+          window.location.replace(`${pathname}/${search}${hash}`);
+        }
+      })();
+    </script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b61ff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='34' font-family='Arial' fill='white'%3EG%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-aria-components/dist/react-aria-components.umd.min.js"></script>
   </head>
   <body data-page="home">
-    <div id="root"></div>
-    <script type="text/babel" src="./script.js"></script>
+    <header class="topbar wrapper">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p class="brand-name">Galsen Parcel</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./trips.html">Trips</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./support.html">Support</a>
+      </nav>
+      <a class="ghost-btn" href="./trips.html">Book now</a>
+    </header>
+
+    <main>
+      <section class="hero wrapper">
+        <div class="hero-copy">
+          <p class="eyebrow">Parcel marketplace • publish-ready frontend</p>
+          <h1>Send, book, and track deliveries across multiple pages</h1>
+          <p>
+            Galsen Parcel now works as a complete client-side product: search travelers,
+            create bookings, and track status through dedicated pages.
+          </p>
+          <div class="hero-cta">
+            <button class="primary-btn" data-scroll-target="#trips">Send a package</button>
+            <button class="secondary-btn" data-scroll-target="#trust">Find a trip</button>
+          </div>
+        </div>
+
+        <div class="search-card" id="trips">
+          <h2>Book a parcel trip</h2>
+          <form id="trip-search-form">
+            <div class="field-grid">
+              <label>
+                From
+                <input id="from" value="Milan" aria-label="Origin" />
+              </label>
+              <label>
+                To
+                <input id="to" value="Dakar" aria-label="Destination" />
+              </label>
+              <label>
+                Pickup date
+                <input id="pickup-date" type="date" value="2026-04-18" aria-label="Pickup date" />
+              </label>
+              <label>
+                Package type
+                <select id="package-type" aria-label="Package type">
+                  <option value="medium">Medium Box (up to 10kg)</option>
+                  <option value="large">Large Box (up to 20kg)</option>
+                  <option value="documents">Documents</option>
+                </select>
+              </label>
+            </div>
+            <button class="primary-btn full" type="submit">Check available travelers</button>
+          </form>
+          <p class="muted" id="average-price">
+            Average price Milan → Dakar today: <strong>€45</strong>
+          </p>
+
+          <div class="results" id="search-results" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="wrapper" id="how">
+        <h2 class="section-title">What’s included</h2>
+        <div class="steps">
+          <article class="card">
+            <p class="chip">Trips page</p>
+            <h3>Search + live booking</h3>
+            <p>Route matching, price calculation, and instant booking buttons.</p>
+          </article>
+          <article class="card">
+            <p class="chip">Dashboard page</p>
+            <h3>Booking lifecycle</h3>
+            <p>Advance status, cancel shipments, and clear history.</p>
+          </article>
+          <article class="card">
+            <p class="chip">3. Track</p>
+            <h3>Coordinate in real time</h3>
+            <p>
+              Follow pickup, en-route, and handoff milestones with shared chat
+              and notifications.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrapper" id="trust">
+        <h2 class="section-title">Popular routes right now</h2>
+        <div class="route-grid" id="route-grid"></div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="wrapper footer-grid">
+        <div>
+          <p class="brand-name">Galsen Parcel</p>
+          <p>Connected pages, persistent bookings, and production-friendly static hosting.</p>
+        </div>
+        <div>
+          <p class="footer-title">Product</p>
+          <a href="./trips.html">Trip marketplace</a>
+          <a href="./dashboard.html">Tracking dashboard</a>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <a href="./support.html">Support</a>
+          <a href="./support.html#faq">FAQ</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
