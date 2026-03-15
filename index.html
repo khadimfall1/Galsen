@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galsen Parcel — Home</title>
+    <title>Galsen Parcel — Send Packages with Trusted Travelers</title>
     <script>
       (function ensureTrailingSlashForStaticHosting() {
         const { pathname, search, hash } = window.location;
@@ -13,10 +13,7 @@
         }
       })();
     </script>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b61ff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='34' font-family='Arial' fill='white'%3EG%3C/text%3E%3C/svg%3E"
-    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b61ff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='34' font-family='Arial' fill='white'%3EG%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,15 +50,43 @@
             create bookings, and track status through dedicated pages.
           </p>
           <div class="hero-cta">
-            <a class="primary-btn" href="./trips.html">Find travelers</a>
-            <a class="secondary-btn" href="./dashboard.html">View my bookings</a>
+            <button class="primary-btn" data-scroll-target="#trips">Send a package</button>
+            <button class="secondary-btn" data-scroll-target="#trust">Find a trip</button>
           </div>
         </div>
 
-        <div class="search-card">
-          <h2>Platform status</h2>
-          <div class="stats-grid" id="home-stats"></div>
-          <p class="muted">Data syncs across pages using browser storage.</p>
+        <div class="search-card" id="trips">
+          <h2>Book a parcel trip</h2>
+          <form id="trip-search-form">
+            <div class="field-grid">
+              <label>
+                From
+                <input id="from" value="Milan" aria-label="Origin" />
+              </label>
+              <label>
+                To
+                <input id="to" value="Dakar" aria-label="Destination" />
+              </label>
+              <label>
+                Pickup date
+                <input id="pickup-date" type="date" value="2026-04-18" aria-label="Pickup date" />
+              </label>
+              <label>
+                Package type
+                <select id="package-type" aria-label="Package type">
+                  <option value="medium">Medium Box (up to 10kg)</option>
+                  <option value="large">Large Box (up to 20kg)</option>
+                  <option value="documents">Documents</option>
+                </select>
+              </label>
+            </div>
+            <button class="primary-btn full" type="submit">Check available travelers</button>
+          </form>
+          <p class="muted" id="average-price">
+            Average price Milan → Dakar today: <strong>€45</strong>
+          </p>
+
+          <div class="results" id="search-results" aria-live="polite"></div>
         </div>
       </section>
 
@@ -79,11 +104,19 @@
             <p>Advance status, cancel shipments, and clear history.</p>
           </article>
           <article class="card">
-            <p class="chip">Support page</p>
-            <h3>Contact and FAQ</h3>
-            <p>Simple support form plus operating information ready for publishing.</p>
+            <p class="chip">3. Track</p>
+            <h3>Coordinate in real time</h3>
+            <p>
+              Follow pickup, en-route, and handoff milestones with shared chat
+              and notifications.
+            </p>
           </article>
         </div>
+      </section>
+
+      <section class="wrapper" id="trust">
+        <h2 class="section-title">Popular routes right now</h2>
+        <div class="route-grid" id="route-grid"></div>
       </section>
     </main>
 
