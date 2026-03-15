@@ -5,12 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galsen Parcel — Support</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body data-page="support">
-    <div id="root"></div>
-    <script type="text/babel" src="./script.js"></script>
+    <header class="topbar wrapper">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p class="brand-name">Galsen Parcel</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./trips.html">Trips</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./support.html" class="active">Support</a>
+      </nav>
+      <a class="ghost-btn" href="./trips.html">Start booking</a>
+    </header>
+
+    <main class="wrapper page-main">
+      <h1 class="page-title">Support center</h1>
+      <div class="search-card">
+        <h2>Contact support</h2>
+        <form id="support-form">
+          <div class="field-grid">
+            <label>Name <input id="support-name" required /></label>
+            <label>Email <input id="support-email" type="email" required /></label>
+            <label class="full-width">Message <input id="support-message" required /></label>
+          </div>
+          <button class="primary-btn" type="submit">Send message</button>
+        </form>
+        <p class="feedback" id="support-feedback" aria-live="polite"></p>
+      </div>
+
+      <section id="faq">
+        <h2 class="section-title">FAQ</h2>
+        <div class="steps">
+          <article class="card"><h3>How does booking work?</h3><p>Go to Trips, search route/date, and click Book now.</p></article>
+          <article class="card"><h3>How do I track status?</h3><p>Use Dashboard to advance and monitor shipment status.</p></article>
+          <article class="card"><h3>Does data persist?</h3><p>Yes, bookings are saved in local browser storage.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
