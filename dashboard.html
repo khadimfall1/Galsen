@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galsen Parcel — Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <header class="topbar wrapper">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p class="brand-name">Galsen Parcel</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./trips.html">Trips</a>
+        <a href="./dashboard.html" class="active">Dashboard</a>
+        <a href="./support.html">Support</a>
+      </nav>
+      <a class="ghost-btn" href="./trips.html">New booking</a>
+    </header>
+
+    <main class="wrapper page-main">
+      <h1 class="page-title">My bookings dashboard</h1>
+      <div class="dashboard-card">
+        <p class="muted">Bookings persist between pages and browser reloads.</p>
+        <p class="feedback" id="feedback-message" aria-live="polite"></p>
+        <div class="bookings-list" id="bookings-list"></div>
+        <button class="secondary-btn" id="clear-bookings" type="button">Clear all bookings</button>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

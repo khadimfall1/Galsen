@@ -3,130 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galsen Parcel — Send Packages with Trusted Travelers</title>
+    <title>Galsen Parcel — Home</title>
+    <script>
+      (function ensureTrailingSlashForStaticHosting() {
+        const { pathname, search, hash } = window.location;
+        const hasFileExtension = /\.[a-z0-9]+$/i.test(pathname);
+        if (!pathname.endsWith('/') && !hasFileExtension) {
+          window.location.replace(`${pathname}/${search}${hash}`);
+        }
+      })();
+    </script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b61ff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='34' font-family='Arial' fill='white'%3EG%3C/text%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <header class="topbar wrapper">
       <div class="brand">
         <span class="brand-mark">G</span>
         <div>
           <p class="brand-name">Galsen Parcel</p>
-          <p class="brand-sub">Trusted GP parcel delivery</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#trips">Trips</a>
-        <a href="#trust">Trust</a>
-        <a href="#footer">Support</a>
+        <a href="./index.html" class="active">Home</a>
+        <a href="./trips.html">Trips</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./support.html">Support</a>
       </nav>
-      <button class="ghost-btn">Become a courier</button>
+      <a class="ghost-btn" href="./trips.html">Book now</a>
     </header>
 
     <main>
       <section class="hero wrapper">
         <div class="hero-copy">
-          <p class="eyebrow">Built for Italy → Senegal parcel routes</p>
-          <h1>Smart package delivery powered by trusted travelers</h1>
+          <p class="eyebrow">Parcel marketplace • publish-ready frontend</p>
+          <h1>Send, book, and track deliveries across multiple pages</h1>
           <p>
-            Match people sending parcels from Italy with trusted travelers heading to Senegal. Organize pickup, handoff, and delivery coordination in one modern web platform.
+            Galsen Parcel now works as a complete client-side product: search travelers,
+            create bookings, and track status through dedicated pages.
           </p>
           <div class="hero-cta">
-            <button class="primary-btn">Send a package</button>
-            <button class="secondary-btn">Find a trip</button>
+            <a class="primary-btn" href="./trips.html">Find travelers</a>
+            <a class="secondary-btn" href="./dashboard.html">View my bookings</a>
           </div>
         </div>
 
-        <div class="search-card" id="trips">
-          <h2>Book a parcel trip</h2>
-          <div class="field-grid">
-            <label>
-              From
-              <input value="Milan - Centrale" aria-label="Origin" />
-            </label>
-            <label>
-              To
-              <input value="Dakar - Plateau" aria-label="Destination" />
-            </label>
-            <label>
-              Pickup date
-              <input type="date" value="2026-04-18" aria-label="Pickup date" />
-            </label>
-            <label>
-              Package type
-              <select aria-label="Package type">
-                <option>Medium Box (up to 10kg)</option>
-                <option>Large Box (up to 20kg)</option>
-                <option>Documents</option>
-              </select>
-            </label>
-          </div>
-          <button class="primary-btn full">Check available travelers</button>
-          <p class="muted">
-            Average price Milan → Dakar today: <strong>€45</strong>
-          </p>
+        <div class="search-card">
+          <h2>Platform status</h2>
+          <div class="stats-grid" id="home-stats"></div>
+          <p class="muted">Data syncs across pages using browser storage.</p>
         </div>
       </section>
 
       <section class="wrapper" id="how">
-        <h2 class="section-title">How Galsen Parcel works</h2>
+        <h2 class="section-title">What’s included</h2>
         <div class="steps">
           <article class="card">
-            <p class="chip">1. Post</p>
-            <h3>Describe your package</h3>
-            <p>
-              Add pickup and drop-off points, dimensions, and preferred timing.
-              No more endless calls.
-            </p>
+            <p class="chip">Trips page</p>
+            <h3>Search + live booking</h3>
+            <p>Route matching, price calculation, and instant booking buttons.</p>
           </article>
           <article class="card">
-            <p class="chip">2. Match</p>
-            <h3>Choose a verified traveler</h3>
-            <p>
-              Browse ratings, route frequency, and delivery success before
-              confirming.
-            </p>
+            <p class="chip">Dashboard page</p>
+            <h3>Booking lifecycle</h3>
+            <p>Advance status, cancel shipments, and clear history.</p>
           </article>
           <article class="card">
-            <p class="chip">3. Track</p>
-            <h3>Coordinate in real time</h3>
-            <p>
-              Follow pickup, en-route, and handoff milestones with shared chat
-              and notifications.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="wrapper" id="trust">
-        <h2 class="section-title">Popular routes right now</h2>
-        <div class="route-grid">
-          <article class="route-card">
-            <p>Milan → Dakar</p>
-            <h3>From €35</h3>
-            <span>28 trusted travelers • weekly departures</span>
-          </article>
-          <article class="route-card">
-            <p>Rome → Dakar</p>
-            <h3>From €40</h3>
-            <span>19 trusted travelers • frequent trips</span>
-          </article>
-          <article class="route-card">
-            <p>Turin → Dakar</p>
-            <h3>From €38</h3>
-            <span>12 trusted travelers • reliable handoff points</span>
-          </article>
-          <article class="route-card">
-            <p>Bologna → Dakar</p>
-            <h3>From €36</h3>
-            <span>34 trusted travelers • high frequency</span>
+            <p class="chip">Support page</p>
+            <h3>Contact and FAQ</h3>
+            <p>Simple support form plus operating information ready for publishing.</p>
           </article>
         </div>
       </section>
@@ -136,21 +91,21 @@
       <div class="wrapper footer-grid">
         <div>
           <p class="brand-name">Galsen Parcel</p>
-          <p>Connecting Italy and Senegal with trusted parcel travelers.</p>
+          <p>Connected pages, persistent bookings, and production-friendly static hosting.</p>
         </div>
         <div>
           <p class="footer-title">Product</p>
-          <a href="#">Trip marketplace</a>
-          <a href="#">Tracking</a>
-          <a href="#">Courier verification</a>
+          <a href="./trips.html">Trip marketplace</a>
+          <a href="./dashboard.html">Tracking dashboard</a>
         </div>
         <div>
           <p class="footer-title">Company</p>
-          <a href="#">About</a>
-          <a href="#">Safety</a>
-          <a href="#">Contact</a>
+          <a href="./support.html">Support</a>
+          <a href="./support.html#faq">FAQ</a>
         </div>
       </div>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
