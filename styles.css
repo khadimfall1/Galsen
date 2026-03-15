@@ -192,33 +192,13 @@ select {
   font-size: 0.9rem;
 }
 
-.feedback {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  min-height: 1.4rem;
-}
-
-.feedback.success {
-  color: #1f7d32;
-}
-
-.feedback.error {
-  color: #c62828;
-}
-
-.feedback.neutral {
-  color: var(--muted);
-}
-
-.results,
-.bookings-list {
+.results {
   display: grid;
   gap: 0.65rem;
   margin-top: 0.8rem;
 }
 
-.result-card,
-.booking-card {
+.result-card {
   display: flex;
   justify-content: space-between;
   gap: 0.8rem;
@@ -228,21 +208,18 @@ select {
   background: #fcfbff;
 }
 
-.result-card h3,
-.booking-card h3 {
+.result-card h3 {
   margin: 0;
   font-size: 1rem;
 }
 
-.result-card p,
-.booking-card p {
+.result-card p {
   margin: 0.3rem 0 0;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.result-meta,
-.booking-actions {
+.result-meta {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -250,8 +227,7 @@ select {
   justify-content: flex-end;
 }
 
-.result-meta span,
-.status-tag {
+.result-meta span {
   border-radius: 999px;
   padding: 0.25rem 0.55rem;
   background: #f3efff;
@@ -263,27 +239,6 @@ select {
   background: #e9e2ff;
   color: #2f2378;
   font-weight: 700;
-}
-
-.status-pending {
-  background: #fff8e1;
-  color: #8d6e00;
-}
-
-.status-picked-up,
-.status-in-transit {
-  background: #e3f2fd;
-  color: #1565c0;
-}
-
-.status-delivered {
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-.status-canceled {
-  background: #ffebee;
-  color: #c62828;
 }
 
 .no-results {
@@ -395,6 +350,14 @@ footer {
 
   .result-meta,
   .booking-actions {
+    justify-content: flex-start;
+  }
+
+  .result-card {
+    flex-direction: column;
+  }
+
+  .result-meta {
     justify-content: flex-start;
   }
 }
