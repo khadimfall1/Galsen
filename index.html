@@ -22,31 +22,32 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <header class="topbar wrapper">
       <div class="brand">
         <span class="brand-mark">G</span>
         <div>
           <p class="brand-name">Galsen Parcel</p>
-          <p class="brand-sub">Trusted GP parcel delivery</p>
+          <p class="brand-sub">Trusted delivery Italy ↔ Senegal</p>
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#trips">Trips</a>
-        <a href="#trust">Trust</a>
-        <a href="#footer">Support</a>
+        <a href="./index.html" class="active">Home</a>
+        <a href="./trips.html">Trips</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./support.html">Support</a>
       </nav>
-      <button class="ghost-btn">Become a courier</button>
+      <a class="ghost-btn" href="./trips.html">Book now</a>
     </header>
 
     <main>
       <section class="hero wrapper">
         <div class="hero-copy">
-          <p class="eyebrow">Built for Italy → Senegal parcel routes</p>
-          <h1>Smart package delivery powered by trusted travelers</h1>
+          <p class="eyebrow">Parcel marketplace • publish-ready frontend</p>
+          <h1>Send, book, and track deliveries across multiple pages</h1>
           <p>
-            Match people sending parcels from Italy with trusted travelers heading to Senegal. Organize pickup, handoff, and delivery coordination in one modern web platform.
+            Galsen Parcel now works as a complete client-side product: search travelers,
+            create bookings, and track status through dedicated pages.
           </p>
           <div class="hero-cta">
             <button class="primary-btn" data-scroll-target="#trips">Send a package</button>
@@ -90,23 +91,17 @@
       </section>
 
       <section class="wrapper" id="how">
-        <h2 class="section-title">How Galsen Parcel works</h2>
+        <h2 class="section-title">What’s included</h2>
         <div class="steps">
           <article class="card">
-            <p class="chip">1. Post</p>
-            <h3>Describe your package</h3>
-            <p>
-              Add pickup and drop-off points, dimensions, and preferred timing.
-              No more endless calls.
-            </p>
+            <p class="chip">Trips page</p>
+            <h3>Search + live booking</h3>
+            <p>Route matching, price calculation, and instant booking buttons.</p>
           </article>
           <article class="card">
-            <p class="chip">2. Match</p>
-            <h3>Choose a verified traveler</h3>
-            <p>
-              Browse ratings, route frequency, and delivery success before
-              confirming.
-            </p>
+            <p class="chip">Dashboard page</p>
+            <h3>Booking lifecycle</h3>
+            <p>Advance status, cancel shipments, and clear history.</p>
           </article>
           <article class="card">
             <p class="chip">3. Track</p>
@@ -129,19 +124,17 @@
       <div class="wrapper footer-grid">
         <div>
           <p class="brand-name">Galsen Parcel</p>
-          <p>Connecting Italy and Senegal with trusted parcel travelers.</p>
+          <p>Connected pages, persistent bookings, and production-friendly static hosting.</p>
         </div>
         <div>
           <p class="footer-title">Product</p>
-          <a href="#">Trip marketplace</a>
-          <a href="#">Tracking</a>
-          <a href="#">Courier verification</a>
+          <a href="./trips.html">Trip marketplace</a>
+          <a href="./dashboard.html">Tracking dashboard</a>
         </div>
         <div>
           <p class="footer-title">Company</p>
-          <a href="#">About</a>
-          <a href="#">Safety</a>
-          <a href="#">Contact</a>
+          <a href="./support.html">Support</a>
+          <a href="./support.html#faq">FAQ</a>
         </div>
       </div>
     </footer>
