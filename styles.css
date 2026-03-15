@@ -5,7 +5,6 @@
   --muted: #6f6c84;
   --primary: #7b61ff;
   --primary-dark: #6247f7;
-  --ring: #e8e2ff;
 }
 
 * {
@@ -80,6 +79,11 @@ footer a {
   cursor: pointer;
 }
 
+.small {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+}
+
 .ghost-btn {
   background: #fff;
   border: 1px solid #ded7ff;
@@ -134,7 +138,13 @@ h1 {
   border: 1px solid #d5ceff;
 }
 
-.search-card {
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-card,
+.dashboard-card {
   background: var(--surface);
   border: 1px solid #e4defe;
   border-radius: 1.2rem;
@@ -150,6 +160,10 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
 }
 
 label {
@@ -174,6 +188,109 @@ select {
 }
 
 .muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  min-height: 1.4rem;
+}
+
+.feedback.success {
+  color: #1f7d32;
+}
+
+.feedback.error {
+  color: #c62828;
+}
+
+.feedback.neutral {
+  color: var(--muted);
+}
+
+.results,
+.bookings-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.result-card,
+.booking-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border: 1px solid #ebe7ff;
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+  background: #fcfbff;
+}
+
+.result-card h3,
+.booking-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.result-card p,
+.booking-card p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-meta,
+.booking-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.result-meta span,
+.status-tag {
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  background: #f3efff;
+  font-size: 0.8rem;
+  color: #4b3fab;
+}
+
+.result-meta .price {
+  background: #e9e2ff;
+  color: #2f2378;
+  font-weight: 700;
+}
+
+.status-pending {
+  background: #fff8e1;
+  color: #8d6e00;
+}
+
+.status-picked-up,
+.status-in-transit {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-delivered {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-canceled {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.no-results {
+  margin: 0;
+  border: 1px dashed #d8cfff;
+  border-radius: 0.8rem;
+  padding: 0.7rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -257,7 +374,8 @@ footer {
   .hero,
   .steps,
   .route-grid,
-  .footer-grid {
+  .footer-grid,
+  .field-grid {
     grid-template-columns: 1fr;
   }
 
@@ -266,7 +384,17 @@ footer {
     display: none;
   }
 
-  .field-grid {
-    grid-template-columns: 1fr;
+  .full-width {
+    grid-column: auto;
+  }
+
+  .result-card,
+  .booking-card {
+    flex-direction: column;
+  }
+
+  .result-meta,
+  .booking-actions {
+    justify-content: flex-start;
   }
 }
