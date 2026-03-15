@@ -39,39 +39,43 @@
             Match people sending parcels from Italy with trusted travelers heading to Senegal. Organize pickup, handoff, and delivery coordination in one modern web platform.
           </p>
           <div class="hero-cta">
-            <button class="primary-btn">Send a package</button>
-            <button class="secondary-btn">Find a trip</button>
+            <button class="primary-btn" data-scroll-target="#trips">Send a package</button>
+            <button class="secondary-btn" data-scroll-target="#trust">Find a trip</button>
           </div>
         </div>
 
         <div class="search-card" id="trips">
           <h2>Book a parcel trip</h2>
-          <div class="field-grid">
-            <label>
-              From
-              <input value="Milan - Centrale" aria-label="Origin" />
-            </label>
-            <label>
-              To
-              <input value="Dakar - Plateau" aria-label="Destination" />
-            </label>
-            <label>
-              Pickup date
-              <input type="date" value="2026-04-18" aria-label="Pickup date" />
-            </label>
-            <label>
-              Package type
-              <select aria-label="Package type">
-                <option>Medium Box (up to 10kg)</option>
-                <option>Large Box (up to 20kg)</option>
-                <option>Documents</option>
-              </select>
-            </label>
-          </div>
-          <button class="primary-btn full">Check available travelers</button>
-          <p class="muted">
+          <form id="trip-search-form">
+            <div class="field-grid">
+              <label>
+                From
+                <input id="from" value="Milan" aria-label="Origin" />
+              </label>
+              <label>
+                To
+                <input id="to" value="Dakar" aria-label="Destination" />
+              </label>
+              <label>
+                Pickup date
+                <input id="pickup-date" type="date" value="2026-04-18" aria-label="Pickup date" />
+              </label>
+              <label>
+                Package type
+                <select id="package-type" aria-label="Package type">
+                  <option value="medium">Medium Box (up to 10kg)</option>
+                  <option value="large">Large Box (up to 20kg)</option>
+                  <option value="documents">Documents</option>
+                </select>
+              </label>
+            </div>
+            <button class="primary-btn full" type="submit">Check available travelers</button>
+          </form>
+          <p class="muted" id="average-price">
             Average price Milan → Dakar today: <strong>€45</strong>
           </p>
+
+          <div class="results" id="search-results" aria-live="polite"></div>
         </div>
       </section>
 
@@ -107,28 +111,7 @@
 
       <section class="wrapper" id="trust">
         <h2 class="section-title">Popular routes right now</h2>
-        <div class="route-grid">
-          <article class="route-card">
-            <p>Milan → Dakar</p>
-            <h3>From €35</h3>
-            <span>28 trusted travelers • weekly departures</span>
-          </article>
-          <article class="route-card">
-            <p>Rome → Dakar</p>
-            <h3>From €40</h3>
-            <span>19 trusted travelers • frequent trips</span>
-          </article>
-          <article class="route-card">
-            <p>Turin → Dakar</p>
-            <h3>From €38</h3>
-            <span>12 trusted travelers • reliable handoff points</span>
-          </article>
-          <article class="route-card">
-            <p>Bologna → Dakar</p>
-            <h3>From €36</h3>
-            <span>34 trusted travelers • high frequency</span>
-          </article>
-        </div>
+        <div class="route-grid" id="route-grid"></div>
       </section>
     </main>
 
@@ -152,5 +135,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
